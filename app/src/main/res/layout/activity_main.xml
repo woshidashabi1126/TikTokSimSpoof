@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIM SPOOF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/accent_green"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2"
+            android:paddingBottom="2dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LSPosed • TikTok region bypass"
+            android:textSize="11sp"
+            android:textColor="@color/text_dim"
+            android:fontFamily="monospace"
+            android:paddingBottom="18dp" />
+
+        <!-- Enable toggle -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="0dp"
+            android:layout_marginBottom="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Module enabled"
+                    android:textColor="@color/text_primary"
+                    android:fontFamily="monospace"
+                    android:textSize="15sp" />
+                <Switch
+                    android:id="@+id/switch_enabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── Country picker ───────────────────────────────── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▶ COUNTRY / CARRIER PRESET"
+            android:textColor="@color/accent_blue"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:letterSpacing="0.1"
+            android:paddingBottom="6dp" />
+
+        <Button
+            android:id="@+id/btn_country_picker"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="🌍  Choose country preset..."
+            android:fontFamily="monospace"
+            android:textSize="14sp"
+            android:textColor="@color/text_primary"
+            android:backgroundTint="@color/card_bg"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/accent_blue"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_selected_carrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/accent_blue"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:paddingBottom="14dp"
+            android:visibility="gone" />
+
+        <!-- ── SIM card ───────────────────────────────────────── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▶ SIM CARD"
+            android:textColor="@color/accent_blue"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="0dp"
+            android:layout_marginBottom="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="SIM Country ISO" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_sim_country_iso"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="us" android:inputType="text"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="8dp" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="SIM Operator MCC+MNC" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_sim_operator_mcc_mnc"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="31026" android:inputType="number"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="8dp" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="SIM Operator Name" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_sim_operator_name"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="T-Mobile" android:inputType="text"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── Network ───────────────────────────────────────── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▶ NETWORK"
+            android:textColor="@color/accent_blue"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="0dp"
+            android:layout_marginBottom="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Network Country ISO" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_network_country_iso"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="us" android:inputType="text"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="8dp" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Network Operator MCC+MNC" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_network_operator_mcc_mnc"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="31026" android:inputType="number"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="8dp" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Network Operator Name" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_network_operator_name"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="T-Mobile" android:inputType="text"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── Subscriber optional ───────────────────────────── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▶ SUBSCRIBER  (optional)"
+            android:textColor="@color/accent_blue"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="0dp"
+            android:layout_marginBottom="14dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Line 1 Number  (blank = keep real)" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_line1_number"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="+1xxxxxxxxxx" android:inputType="phone"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="8dp" />
+
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Subscriber ID / IMSI  (blank = keep real)" android:textColor="@color/text_dim"
+                    android:fontFamily="monospace" android:textSize="10sp" />
+                <EditText android:id="@+id/et_subscriber_id"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="15-digit IMSI" android:inputType="number"
+                    android:textColor="@color/accent_green" android:fontFamily="monospace"
+                    android:background="@android:color/transparent" android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── Locale ─────────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="6dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="▶ ALSO SPOOF LOCALE"
+                android:textColor="@color/accent_blue"
+                android:fontFamily="monospace"
+                android:textSize="11sp" />
+            <Switch
+                android:id="@+id/switch_spoof_locale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group_locale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="0dp"
+                android:layout_marginBottom="14dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:paddingEnd="8dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="Language" android:textColor="@color/text_dim"
+                            android:fontFamily="monospace" android:textSize="10sp" />
+                        <EditText android:id="@+id/et_locale_language"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:hint="en" android:inputType="text"
+                            android:textColor="@color/accent_green" android:fontFamily="monospace"
+                            android:background="@android:color/transparent" android:textSize="14sp" />
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="Country" android:textColor="@color/text_dim"
+                            android:fontFamily="monospace" android:textSize="10sp" />
+                        <EditText android:id="@+id/et_locale_country"
+                            android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:hint="US" android:inputType="text"
+                            android:textColor="@color/accent_green" android:fontFamily="monospace"
+                            android:background="@android:color/transparent" android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="RESET"
+                android:fontFamily="monospace"
+                android:backgroundTint="@color/card_bg"
+                android:textColor="@color/text_dim"
+                android:layout_marginEnd="8dp" />
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="2"
+                android:text="SAVE &amp; APPLY"
+                android:fontFamily="monospace"
+                android:backgroundTint="@color/accent_green"
+                android:textColor="@color/bg_dark" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠ After saving: force-stop TikTok, then reopen.\nModule must be enabled in LSPosed manager."
+            android:textColor="@color/text_dim"
+            android:fontFamily="monospace"
+            android:textSize="10sp"
+            android:paddingBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

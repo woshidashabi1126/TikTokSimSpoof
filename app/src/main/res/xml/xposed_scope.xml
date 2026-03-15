@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TikTok Global (most common) -->
+    <item>com.zhiliaoapp.musically</item>
+    <!-- TikTok for some Asian markets / older installs -->
+    <item>com.ss.android.ugc.trill</item>
+    <!-- TikTok Lite -->
+    <item>com.zhiliaoapp.musically.go</item>
+    <!-- Douyin (Chinese TikTok) -->
+    <item>com.ss.android.ugc.aweme</item>
+    <!-- TikTok for Business -->
+    <item>com.tiktok.business</item>
+</resources>
